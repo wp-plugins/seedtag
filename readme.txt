@@ -1,4 +1,4 @@
-=== seedtagwp ===
+=== seedtag ===
 Contributors:      10up
 Donate link:       hrrp://seedtag.com
 Tags: 
@@ -19,7 +19,7 @@ Easy seedtag install
 = Manual Installation =
 
 1. Upload the entire `/seedtagwp` directory to the `/wp-content/plugins/` directory.
-2. Activate seedtagwp through the 'Plugins' menu in WordPress.
+2. Activate seedtag through the 'Plugins' menu in WordPress.
 
 == Frequently Asked Questions ==
 
