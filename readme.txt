@@ -1,5 +1,5 @@
 === seedtag ===
-Contributors:      10up
+Contributors:      seedtag
 Donate link:       hrrp://seedtag.com
 Tags: 
 Requires at least: 3.9
