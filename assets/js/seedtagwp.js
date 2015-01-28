@@ -1,8 +1,3 @@
-/*! seedtagwp - v0.1.0
+/*! seedtagwp - v0.1.3
  * hrrp://seedtag.com
- * Copyright (c) 2014; * Licensed GPLv2+ */
-( function( window, undefined ) {
-	'use strict';
-
-
-} )( this );
+ * Copyright (c) 2015; * Licensed GPLv2+ */

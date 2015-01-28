@@ -3,7 +3,7 @@
  * Plugin Name: seedtag
  * Plugin URI:  http://www.seedtag.com
  * Description: Instala seedtag de forma facil. Etiqueta tus fotos y gana dinero con ellas! Si tienes algún problema <a href="mailto:info@seedtag.com" target="_blank">contacta con nosotros</a>
- * Version:     0.1.0
+ * Version:     0.1.3
  * Author:      <b>seedtag</b> team
  * Author URI:  http://www.seedtag.com/team
  * License:     GPLv2+
@@ -35,7 +35,7 @@
  */
 
 // Useful global constants
-define( 'SEEDTAGWP_VERSION', '0.1.0' );
+define( 'SEEDTAGWP_VERSION', '0.1.3' );
 define( 'SEEDTAGWP_URL',     plugin_dir_url( __FILE__ ) );
 define( 'SEEDTAGWP_PATH',    dirname( __FILE__ ) . '/' );
 
@@ -81,7 +81,12 @@ class seedtagwp_general_setting {
     }
     function fields_html() {
         $value = get_option( 'seedtagwp_token', '' );
-        echo '<input type="text" id="seedtagwp_token" name="seedtagwp_token" value="' . $value . '" placeholder="XXXX-XXXX-XX" /> <span><a href="http://www.seedtag.com/control/wordpress" target="_blanc">Aquí encontrarás tu código</a> (debes estar logueado)</span>';
+        echo '<input type="text" id="seedtagwp_token" name="seedtagwp_token" value="' 
+        . $value 
+        . '" placeholder="XXXX-XXXX-XX" /> <span>'
+        . '<a href="http://www.seedtag.com/control/publisher/guide" target="_blanc">'
+                . 'Aquí encontrarás tu código'
+        . '</a> (debes estar logueado)</span>';
     }
 }
 
@@ -90,9 +95,9 @@ $new_general_setting = new seedtagwp_general_setting();
 
 
 function seedtagwp_pasteCode() {
-    $code = file_get_contents(dirname(__FILE__) . '/assets/seedtagCode.html');
+    $codeTemplate = file_get_contents(dirname(__FILE__) . '/assets/seedtagCode.html');
     $stId = get_option( 'seedtagwp_token', '' );
-    $code = str_replace('#st-token#', $stId, $code); 
+    $code = str_replace('#st-token#', $stId, $codeTemplate); 
     
     if($stId) {        
         echo $code;
